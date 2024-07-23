@@ -20,5 +20,5 @@ int main(){
     ret = a /b  ;
     cout << a<<"/"<<b<< "="<<ret<<endl;
     return 0;
-    
+    /* 수정 */
     }
