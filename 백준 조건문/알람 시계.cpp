@@ -10,7 +10,7 @@ int main (){
         	a = 23;
     }
     else
-    
+
         b -= 45;
 
     cout << a << " "<< b;
@@ -18,3 +18,4 @@ int main (){
         
         return 0 ;
 }
+/* 조금 생각해야함 */
