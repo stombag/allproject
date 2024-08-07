@@ -1,5 +1,6 @@
 #include <iostream>
 
+using namespace std;
 class Test
 {
 
@@ -31,5 +32,5 @@ int main()
     test.a = 0;
     test.b = 0;
 
-    Test test2(10, 20);
+    Test test2();
 }
