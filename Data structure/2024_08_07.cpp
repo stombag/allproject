@@ -1,5 +1,5 @@
 #include <iostream>
-
+  
 struct people
 {
     // 구조체
