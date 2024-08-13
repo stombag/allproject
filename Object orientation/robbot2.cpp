@@ -41,13 +41,23 @@ public:
 class Robot
 {
 private:
-   Arm &_leftArm;
-   Arm &_rightArm;
+   Arm *_pleftArm;
+   Arm *_prightArm;
 
 public:
-   Robot(Arm &leftArm, Arm &rightArm)
-       : _leftArm(leftArm), _rightArm(rightArm)
+   Robot(Arm *pLeftArm, Arm *pRightArm)
+       : _pleftArm(pLeftArm), _prightArm(pRightArm)
    {
+   }
+
+   void SetLeftArm(Arm *pLeftArm)
+   {
+      _pleftArm = pLeftArm;
+   }
+
+   void SetRightArm(Arm *pRightArm)
+   {
+      _prightArm = pRightArm;
    }
 
    void ShowInfo()
@@ -55,37 +65,12 @@ public:
       cout << endl;
       cout << "Robot: " << endl;
       cout << "왼쪽팔: ";
-      _leftArm.ShowInfo();
+      _pleftArm->ShowInfo();
       cout << endl;
       cout << "오른쪽팔: ";
-      _rightArm.ShowInfo();
+      _prightArm->ShowInfo();
       cout << endl;
    }
-};
-
-class CannonArmRobot : public Robot
-{
-public:
-   CannonArmRobot(CannonArm &leftArm, CannonArm &rightArm)
-       : Robot(leftArm, rightArm)
-   {
-   }
-};
-
-class RocketArmRobot : public Robot
-{
-public:
-   RocketArmRobot(RocketArm &leftArm, RocketArm &rightArm)
-       : Robot(leftArm, rightArm)
-   {
-   }
-};
-
-class LazerArmRobot : public Robot
-{
-public:
-   LazerArmRobot(LazerArm &leftArm, LazerArm &rightArm)
-       : Robot(leftArm, rightArm) {}
 };
 
 int main()
@@ -94,14 +79,20 @@ int main()
    CannonArm cannonArm;
    LazerArm lazerArm;
 
-   CannonArmRobot cannonArmRobot(cannonArm, cannonArm);
-   RocketArmRobot rocketArmRobot(rocketArm, rocketArm);
-   LazerArmRobot lazerArmRobot(lazerArm, lazerArm);
+   Robot cannonArmRobot(&cannonArm, &cannonArm);
+   Robot rocketArmRobot(&rocketArm, &rocketArm);
+   Robot lazerArmRobot(&lazerArm, &lazerArm);
+   Robot leftLazerArmRightCannonArmRobot(&lazerArm, &cannonArm);
 
    cannonArmRobot.ShowInfo();
    rocketArmRobot.ShowInfo();
    lazerArmRobot.ShowInfo();
 
+   leftLazerArmRightCannonArmRobot.ShowInfo();
+   leftLazerArmRightCannonArmRobot.SetRightArm(&rocketArm);
+
+   leftLazerArmRightCannonArmRobot.ShowInfo();
+
    return 0;
 }
-// 상속
+// 포함
