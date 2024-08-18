@@ -10,6 +10,7 @@ int main()
         int data;
         Node *next;
     };
+
     Node *head;
     Node n1;
     Node n2;
