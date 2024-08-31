@@ -5,12 +5,11 @@ using namespace std;
 class parants
 {
 public:
-    void mom()
+    int age;
+    int lengh;
+    string name;
+    void state()
     {
-        int age = 10;
-        int lengh = 10;
-        string name = "김홍도";
-
         std::cout << "나이 : " << age << '\n'
                   << "키 : " << lengh << '\n'
                   << "이름 : " << name << endl;
@@ -19,7 +18,16 @@ public:
 int main()
 {
     parants Mom;
-    Mom.mom();
+    Mom.age = 50;
+    Mom.lengh = 160;
+    Mom.name = "장원영";
+    Mom.state();
+
+    parants Dad;
+    Dad.age = 55;
+    Dad.lengh = 170;
+    Dad.name = "차은우";
+    Dad.state();
 
     return 0;
 }
