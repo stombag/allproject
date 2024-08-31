@@ -1,0 +1,9 @@
+
+ 주석 처리 
+ ctrl + k + U, ctrl + k +c
+
+ 입력 키 늘리기
+ ctrl + Alt + 클릭
+
+ 함수 이름 변경
+ ctrl + R 

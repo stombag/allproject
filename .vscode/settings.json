@@ -57,6 +57,7 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "new": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "typeinfo": "cpp"
   }
 }
