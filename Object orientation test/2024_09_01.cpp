@@ -13,6 +13,11 @@ public:
     {
         return name;
     }
+
+    void setage(int newAge)
+    {
+        age = newAge;
+    }
     int getage()
     {
         return age;
@@ -23,8 +28,8 @@ int main()
 {
 
     parents A;
-    cout << A.getage() << endl;
     cout << A.getName() << endl;
-
+    A.setage(20);
+    cout << A.getage() << endl;
     return 0;
 }
